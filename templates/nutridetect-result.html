@@ -1,0 +1,62 @@
+{% extends 'layout.html' %} 
+{% block body %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriDetect</title>
+  <!-- Other meta tags, stylesheets, and scripts go here -->
+
+  <script>
+      // Function to handle visibility change
+      function handleVisibilityChange() {
+          if (document.hidden) {
+              document.title = "Please Come back :()";
+          } else {
+              document.title = "NutriDetect :)";
+          }
+      }
+
+      // Add event listener for visibility change
+      document.addEventListener("visibilitychange", handleVisibilityChange);
+  </script>
+</head>
+
+<div class="container-fluid py-2 mx-auto my-50 h-10" style="margin: 3rem; background-color:rgb(124, 179, 66);">
+  <div class="row">
+      <div class="col-sm-12 py-2 py-md-3">
+          <div class="card card-body" style="background-color:rgb(189, 189, 189)">
+            <!-- Display the input image -->
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='out.jpg') }}" alt="Input Image" style="max-width: 100%; height: auto;">
+                </div>
+                <div class="col-md-6">
+                    <!-- Prediction and WHT content -->
+                    <p class="text-center" style="color: white; font-size: 32px; font-weight: bold; background-color:rgb(124, 179, 66); margin-bottom: 20px;">{{ prediction }}</p>
+                    <h6 style="color: white; font-size: 24px; font-weight: bold;">{{ wht }}</h6>
+                    <!-- Divider -->
+                    <hr style="border-color: white; margin: 20px 0;">
+                    <!-- Rest of the content -->
+                    <h6 style="color: white; font-size: 24px; font-weight: bold;">{{ symtom }}</h6>
+                    <h6 style="color: white; font-size: 24px; font-weight: bold;">{{ medicine }}</h6>
+                    <h6 style="color: white; font-size: 24px; font-weight: bold;">{{ field1 }}</h6>
+                    <h6 style="color: white; font-size: 24px; font-weight: bold;">{{ field2 }}</h6>
+                    <h6 style="color: white; font-size: 24px; font-weight: bold;">{{ field3 }}</h6>
+                    <h6 style="color: white; font-size: 24px; font-weight: bold;">{{ field4 }}</h6>
+                    <!-- Display freshness information -->
+                    <hr style="border-color: white; margin: 20px 0;">
+                    <br>
+                    <h4 style="color: white; font-size: 28px; font-weight: bold;">Freshness:</h4>
+                    {% if freshness == "Fresh" %}
+                    <h6 style="color: white; font-size: 24px; font-weight: bold;">Freshness: {{ freshness }}</h6>
+                    {% else %}
+                    <h6 style="color: white; font-size: 24px; font-weight: bold;">{{ freshness }}</h6>
+                    {% endif %}
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

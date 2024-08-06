@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriDetect</title>
+  <!-- Other meta tags, stylesheets, and scripts go here -->
+
+  <script>
+    // Function to handle visibility change
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        document.title = "Please Come back :(";
+      } else {
+        document.title = "NutriDetect :)";
+      }
+    }
+
+    // Add event listener for visibility change
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+  </script>
+</head>
+
+<style>
+  html body {
+    background: url('/static/images/1.jpg') no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+  }
+
+  .form-container {
+    width: 350px;
+    height: 50rem;
+    margin: 0 auto;
+    color: white; /* Changed color to white */
+    border-radius: 25px;
+    padding: 10px 10px;
+    font-weight: bold;
+  }
+</style>
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: white; font-family: 'Times New Roman', Times, serif;">
+  <b>NutriDetect</b>
+</h2>
+<br />
+<br>
+
+<div class="form-container">
+
+  <form class="form-signin" action='/NutriDetect-result' method="POST" enctype=multipart/form-data>
+
+
+    <h2 class="h4 mb-3 font-weight-normal"><b>Please Upload The Image</b></h2>
+    <input type="file" name="file1" class="form-control-file" id="inputfile" onchange="preview_image(event)" style="font-weight: bold;">
+    <br>
+    <br>
+    <img id="output-image" class="rounded mx-auto d-block" />
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" style="font-weight: bold;">Scan</button>
+
+
+  </form>
+</div>
+
+<script type="text/javascript">
+  function preview_image(event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var output = document.getElementById('output-image')
+      
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+
+  function capture_image() {
+    // Implement camera capture functionality here
+    alert('Camera capture functionality will be implemented here.');
+  }
+</script>
+
+</div>
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriDetect</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Add the JavaScript code here -->
+  <script>
+    // Function to handle visibility change
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        document.title = "Please Come back :()";
+      } else {
+        document.title = "NutriDetect :)";
+      }
+    }
+
+    // Add event listener for visibility change
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+  </script>
+  <style>
+    #section-1 {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    
+    #section-1 img {
+      width: 80%; /* Adjust width as needed */
+      height: auto;
+      filter: blur(5px); /* Add blur effect */
+    }
+    
+    #section-1 h1,
+    #section-1 p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+	  margin-bottom: 20px
+    }
+    
+    /* Add styles for section-2 */
+    #section-2 {
+      text-align: center;
+	  margin-bottom: 20px
+    }
+
+    
+    #section-2 img {
+      width: 55%; /* Adjust width as needed */
+      height: 430px;
+      margin-bottom: 20px; /* Add margin between images and paragraphs */
+    }
+
+	/* Add styles for section-3 */
+    #section-3 {
+      text-align: center;
+	  margin-bottom: 20px
+    }
+
+    
+    #section-3 img {
+      width: 55%; /* Adjust width as needed */
+      height: 430px;
+      margin-bottom: 20px; /* Add margin between images and paragraphs */
+    }
+
+	/* Add styles for section-4 */
+    #section-4 {
+      text-align: center;
+	  margin-bottom: 20px
+    }
+
+    
+    #section-4 img {
+      width: 55%; /* Adjust width as needed */
+      height: 430px;
+      margin-bottom: 20px; /* Add margin between images and paragraphs */
+    }
+  </style>
+</head>
+<body>
+
+  </header>
+
+  <section id="section-1">
+	<img src="{{ url_for('static', filename='images/indexpg1.png') }}" alt="Barcelona Image" class="img-fluid">
+	<h1 style="font-weight: bold; text-align: center; font-size: 2.5rem; margin-top: 20px; color: white;">NutriDetect: Ml-Powered Analyzer for Freshness and Nutrition in Fruits, Vegetables, and Nuts</h1>
+  </section>
+  
+  
+    
+  </section>
+
+  <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; margin-bottom: 20px">
+    NutriDetect represents a groundbreaking advancement in food analysis technology, offering an intuitive and efficient solution for assessing the freshness and nutritional content of fruits, vegetables, and nuts. By leveraging cutting-edge machine learning algorithms, NutriDetect swiftly evaluates the quality of your produce with unparalleled accuracy. With just a quick scan or image upload, users gain access to a wealth of information, including detailed nutrient profiles and freshness indicators.
+    <br><br>
+    Gone are the days of uncertain food quality and incomplete nutritional knowledge. NutriDetect empowers users to make informed decisions about their dietary intake by providing comprehensive insights into the composition of their food items. Whether you're concerned about the ripeness of your fruit, the crispness of your vegetables, or the vitality of your nuts, NutriDetect has you covered.
+    <br><br>
+    Furthermore, NutriDetect adapts to your individual preferences and dietary goals, offering personalized recommendations and suggestions to help you optimize your nutritional intake. Whether you're a health-conscious individual striving for peak performance or someone simply looking to make healthier choices, NutriDetect serves as your trusted companion on your journey to better health and well-being. Experience the future of food analysis with NutriDetect – your key to fresher, healthier eating habits.
+</p>
+
+
+	
+<section id="section-2">
+    <img src="{{ url_for('static', filename='images/a2.png') }}" alt="A2 Image" class="img-fluid" text-align: "left"; margin-bottom: "20px">
+    <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; margin-bottom: 20px">Experience the cutting-edge technology of NutriDetect by tapping on the scanner after opening the platform at http://127.0.0.1:5000/. With NutriDetect, you can delve into the freshness and nutritional value of various fruits, vegetables, and nuts like never before.</p>
+  </section>
+
+  <section id="section-3">
+    <img src="{{ url_for('static', filename='images/a1.png') }}" alt="A2 Image" class="img-fluid"  margin-bottom: "20px">
+    <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; margin-bottom: 20px">Now, take the next step in exploring NutriDetect's capabilities. Begin by uploading a file. Open your preferred browser and navigate to the NutriDetect platform. Once there, browse your device and select an image of a fruit, vegetable, or nut. The image can be in any common format, such as PNG, JPEG, JPG, or others. After selecting the desired image, proceed by clicking on the "Scan" button to initiate the analysis process.</p>
+  </section>
+
+
+  <section id="section-4">
+    <img src="{{ url_for('static', filename='images/a3.png') }}" alt="A2 Image" class="img-fluid"  margin-bottom: "20px">
+    <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; margin-bottom: 20px">Upon uploading the image, NutriDetect's advanced models will spring into action, processing the input with precision. The output generated will provide comprehensive details regarding the content of the image, including the identification of the fruit, vegetable, or nut depicted. Additionally, NutriDetect will furnish a detailed breakdown of the nutrient facts present in the scanned item. This includes essential information such as protein content, sugar levels, fiber composition, carbohydrates, fat content, and calorie count. Furthermore, NutriDetect places a significant emphasis on freshness, providing insights into the item's overall freshness status, ensuring users are well-informed about the quality of their produce.</p>
+  </section>
+
+      
+
+  <footer>
+    <p>NutriDetect: Ml-Powered Analyzer</p>
+  </footer>
+</body>
+</html>
+{% endblock %}
